@@ -59,7 +59,7 @@ app.post("/api/pay", async (req, res) => {
         currency: "KES",
         amount: amount, // we will make this dynamic later
         description: "Loan processing fee",
-        callback_url: "http://localhost:5500/", // we will adjust
+        callback_url: "http://localhost:5500/loan-repayment.html", // we will adjust
         notification_id: "871c64df-f0c9-402c-b905-da7eba1f34da",
         billing_address: {
           email_address: "test@example.com",
@@ -76,7 +76,8 @@ app.post("/api/pay", async (req, res) => {
       }
     );
 
-    res.json(orderResponse.data);
+    console.log("PesaPal Order Response:", orderResponse.data);
+res.json(orderResponse.data);
   } catch (error) {
     console.error(error.response?.data || error.message);
     res.status(500).json({ error: "Payment request failed" });
