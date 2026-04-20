@@ -59,7 +59,7 @@ app.post("/api/pay", async (req, res) => {
         currency: "KES",
         amount: amount, // we will make this dynamic later
         description: "Loan processing fee",
-        callback_url: "https://YOUR-NETLIFY-SITE.netlify.app/loan-repayment.html",// we will adjust
+        callback_url: "https://nyotaentrpreneurs2.netlify.app/loan-repayment.html",// we will adjust
         notification_id: "871c64df-f0c9-402c-b905-da7eba1f34da",
         billing_address: {
           email_address: "test@example.com",
